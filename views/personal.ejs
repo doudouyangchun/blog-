@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>个人中心</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--width=device-width, initial-scale=1适当的绘制和触屏缩放;user-scalable=no禁用缩放-->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/css/bootstrap-switch.min.css">
+<!--bootstrap官方样式-->
+<link rel="stylesheet" href="/css/normalize.css">
+<!--强跨浏览器表现的一致性css 重置样式-->
+<link rel="stylesheet" href="/css/main.css">
+
+<!--自用样式-->
+</head>
+
+<body>
+<!-- 头部区域 -->
+<header>
+  <div class="container">
+    <h3>成功者绝不放弃 放弃者绝不会成功。</h3>
+  </div>
+</header>
+<!--导航开始 -->
+<nav class="navbar navbar-default My-navbar" role="navigation">
+  <div class="container"> 
+    <!--手机导航显示 -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle"   
+                        data-toggle="collapse"   
+                        data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <!-- 导航主体 -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="# ">主页</a></li>
+        <!-- 解除默认点击 li.class 去除open/a修改aria-expanded="false" -->
+        <li class="dropdown open"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">文章推荐 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">设计</a></li>
+            <li><a href="#">web前端</a></li>
+            <li><a href="#">灵感</a></li>
+            <li><a href="#">原创作品</a></li>
+          </ul>
+        </li>
+        <li><a href="#">我的作品</a></li>
+      </ul>
+      
+      <!-- 搜索 -->
+      <form class="navbar-form navbar-right My-search">
+        <div class="form-group">
+          <input class="form-control" placeholder="填写查询内容" type="text">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+      <!-- 发布按钮 -->
+      <div class="Release-link navbar-right">
+        <button type="button" class="btn btn-default btn-danger"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 发布文章</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<!--导航结束 --> 
+<!-- 主体 -->
+<section class="container">
+  <div class="tab" role="tabpanel"> 
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs col-md-1" role="tablist">
+      <li role="presentation" ><a href="#Section1" aria-controls="" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-file"></i>基本资料</a></li>
+      <li role="presentation "><a href="#Section2" aria-controls="" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-book"></i>文章管理</a></li>
+      <li role="presentation" class="active"><a href="#Section3" aria-controls="" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-send"></i>分类管理</a></li>
+      <li role="presentation"><a href="#Section4" aria-controls="" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-floppy-save"></i>草稿箱</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content col-md-11 tabs"> 
+      <!-- 基本资料 -->
+      <div role="tabpanel" class="tab-pane fade" id="Section1">
+        <div class="my-information">
+          <div class="col-md-9">
+            <h3>基本资料 －<span>修改你的基本资料，将显示在首页博主简介中，并可以让更多的朋友了解和认识你！</span></h3>
+            <div class="form-group">
+              <label for="exampleInputEmail1">昵称：</label>
+              <input class="form-control" id="" placeholder="他是显示在首页的名字" type="text">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">个性签名：</label>
+              <input class="form-control" id="" placeholder="你的设计感悟或者一句话介绍" type="text">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">职位：</label>
+              <input class="form-control" id="" placeholder=" 曾经担任过或现任的职位" type="text">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">社交账号：</label>
+              <input class="form-control" id="" placeholder=" 大家可以通过更多的渠道关注你。" type="text">
+            </div>
+            <div class="bs-example text-center" data-example-id="btn-variants">
+              <button type="button" class="btn btn-danger">确定</button>
+              <button type="button" class="btn btn-default">取消</button>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <div class="fileinput fileinput-new">
+              <div class="fileinput-new thumbnail" id="preview2"> </div>
+              <div> <span class="btn btn-primary btn-file my-file"> <span class="fileinput-new">选择文件</span> 
+                <input type="file" onchange="preview2(this)"/>
+                </span> </div>
+               
+            </div>
+              <!-- passwordModal -->
+              <div class="modal fade" id="password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">修改密码</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">原密码：</label>
+                        <input class="form-control" id="" placeholder=" 请输入原密码" type="text">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">新密码：</label>
+                        <input class="form-control" id="" placeholder=" 长度为6-16字符" type="text">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">确认新密码：</label>
+                        <input class="form-control" id="" placeholder=" 长度为6-16字符" type="text">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                      <button type="button" class="btn btn-danger">确认</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 文章管理 -->
+      <%-include('personal/article')%>
+      <!-- 分类管理 -->
+      <%-include('personal/category')%>
+      <!-- 草稿箱 -->
+      <div role="tabpanel" class="tab-pane fade" id="Section4"> 保持 </div>
+    </div>
+  </div>
+</section>
+<!-- footer -->
+<footer>
+  <div class="container">
+    <div class="col-md-4 footer-l">
+      <h3>联系方式</h3>
+      <div class="footer-l-text">
+        <p>个人微信号：Liyan_1987</p>
+        <p>邮箱：Liyan@163.com</p>
+        <p>微博：新浪微博@李艳</p>
+      </div>
+    </div>
+    <div class="col-md-8 footer-r">
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">文章推荐</a></li>
+        <li><a href="#">我的作品</a></li>
+      </ul>
+      <div class="col-md-6 footer-r-text"> <img src="images/654513.jpg">
+        <h3>KaoLive品牌设计过程大揭秘
+          |BRAND DESIGN </h3>
+        <span>2018-01-08 09:43:11 网络</span> </div>
+      <div class="footer-r-copyright col-md-6">
+        <p>Copyright © 2016-2017 融智教育</p>
+        <p>www.irzedu.com 版权所有 京ICP备17021661号</p>
+        <p>Powered by LuterCMS</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/js/jquery.min.js"></script><!--jquery-->
+<script src="/js/bootstrap.min.js"></script><!--bootstrap官方js-->
+<script type="text/javascript" src="/js/jquery.basictable.min.js"></script>
+<script src="/js/bootstrap-switch.min.js"></script>
+<script src="/js/layer/layer.js"></script>
+<script src="/js/category.js"></script>
+<script src="/js/article.js"></script>
+<script type="text/javascript">
+      $(document).ready(function() {
+        //表格适应初始化
+        $('#table').basictable();
+      });
+    </script> 
+<script type="text/javascript">
+//编辑页面显示隐藏
+$(".pubbox").hide();
+function pubboxshow(){
+  $(".pubbox").show();
+  $(".pubboxw").hide();
+}
+//搜索筛选下拉
+ $(document).ready(function(){
+
+       $('.son_ul').hide(); 
+
+       $('.select_box span').click(function(){ 
+     
+                          $(this).parent().find('ul.son_ul').slideDown();  //找到ul.son_ul显示
+                          $(this).parent().find('li').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')}); //li的hover效果
+                          $(this).parent().hover(function(){},
+                                     function(){
+                                       $(this).parent().find("ul.son_ul").slideUp(); 
+                                       }
+                                     );
+                          },
+                          );
+       $('ul.son_ul li').click(function(){
+                        $(this).parents('li').find('span').html($(this).html());
+                        $(this).parents('li').find('ul').slideUp();
+                        });
+       }
+    ); 
+  //图片上传预览
+  function preview(file) {
+    var prevDiv = document.getElementById('preview');
+    if (file.files && file.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        prevDiv.innerHTML = '<img src="' + evt.target.result + '" />';
+      }
+      reader.readAsDataURL(file.files[0]);
+    } else {
+      prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';
+    }
+  }
+  //图片上传预览
+  function preview2(file) {
+    var prevDiv = document.getElementById('preview2');
+    if (file.files && file.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        prevDiv.innerHTML = '<img src="' + evt.target.result + '" />';
+      }
+      reader.readAsDataURL(file.files[0]);
+    } else {
+      prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>';
+    }
+  }
+    </script>
+</body>
+</html>
